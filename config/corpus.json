@@ -1,0 +1,78 @@
+{
+  "note": "loop_001 で確定したコーパス(SPEC §2)。zip_url は図書カード記載のテキスト版(ルビあり)。取得は make bronze の手動実行のみ(N-02)",
+  "works": [
+    {
+      "id": "watsuji_kojijunrei",
+      "author": "watsuji",
+      "title": "古寺巡礼",
+      "role": "main",
+      "aozora_id": 49891,
+      "card_url": "https://www.aozora.gr.jp/cards/001395/card49891.html",
+      "zip_url": "https://www.aozora.gr.jp/cards/001395/files/49891_ruby_41858.zip"
+    },
+    {
+      "id": "kamei_yamatokoji",
+      "author": "kamei",
+      "title": "大和古寺風物誌",
+      "role": "main",
+      "aozora_id": 57496,
+      "card_url": "https://www.aozora.gr.jp/cards/001870/card57496.html",
+      "zip_url": "https://www.aozora.gr.jp/cards/001870/files/57496_ruby_60770.zip"
+    },
+    {
+      "id": "hori_yamatoji",
+      "author": "hori",
+      "title": "大和路・信濃路",
+      "role": "main",
+      "aozora_id": 4806,
+      "card_url": "https://www.aozora.gr.jp/cards/001030/card4806.html",
+      "zip_url": "https://www.aozora.gr.jp/cards/001030/files/4806_ruby_14471.zip"
+    },
+    {
+      "id": "watsuji_umoreta",
+      "author": "watsuji",
+      "title": "埋もれた日本",
+      "role": "baseline",
+      "aozora_id": 49881,
+      "card_url": "https://www.aozora.gr.jp/cards/001395/card49881.html",
+      "zip_url": "https://www.aozora.gr.jp/cards/001395/files/49881_ruby_45902.zip"
+    },
+    {
+      "id": "watsuji_kyonoshiki",
+      "author": "watsuji",
+      "title": "京の四季",
+      "role": "baseline",
+      "aozora_id": 49887,
+      "card_url": "https://www.aozora.gr.jp/cards/001395/card49887.html",
+      "zip_url": "https://www.aozora.gr.jp/cards/001395/files/49887_ruby_45529.zip"
+    },
+    {
+      "id": "watsuji_shiro",
+      "author": "watsuji",
+      "title": "城",
+      "role": "baseline",
+      "aozora_id": 49892,
+      "card_url": "https://www.aozora.gr.jp/cards/001395/card49892.html",
+      "zip_url": "https://www.aozora.gr.jp/cards/001395/files/49892_ruby_41879.zip"
+    },
+    {
+      "id": "kamei_yatsugatake",
+      "author": "kamei",
+      "title": "八ヶ岳登山記",
+      "role": "baseline",
+      "aozora_id": 59417,
+      "card_url": "https://www.aozora.gr.jp/cards/001870/card59417.html",
+      "zip_url": "https://www.aozora.gr.jp/cards/001870/files/59417_ruby_69516.zip"
+    },
+    {
+      "id": "kamei_bareisho",
+      "author": "kamei",
+      "title": "馬鈴薯の花",
+      "role": "baseline",
+      "aozora_id": 58096,
+      "card_url": "https://www.aozora.gr.jp/cards/001870/card58096.html",
+      "zip_url": "https://www.aozora.gr.jp/cards/001870/files/58096_ruby_60652.zip"
+    }
+  ],
+  "hori_baseline_note": "堀のベースラインは hori_yamatoji 内の信濃三篇(斑雪・辛夷の花・橇の上にて)を転用(E-1 確定)。別取得は不要"
+}
