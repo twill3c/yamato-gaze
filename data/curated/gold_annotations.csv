@@ -1,0 +1,31 @@
+work_id,para_index,entity_ids,uncertain,note
+watsuji_kojijunrei,1,,false,改版序。書名『古寺巡礼』言及のみ
+watsuji_kojijunrei,59,nara-city-006,false,興福寺の塔
+watsuji_kojijunrei,124,ikaruga-004,false,見出し的要約行
+watsuji_kojijunrei,160,ikaruga-001,false,
+watsuji_kojijunrei,253,,false,尼・天平一般論
+watsuji_kojijunrei,268,nishinokyo-003,false,
+watsuji_kojijunrei,367,ikaruga-008|nishinokyo-001|nishinokyo-002|nishinokyo-005|nishinokyo-003,true,「夢殿の秘仏」=救世観音の同一指示は別名未登録のため含めない(AGENTS §2)
+watsuji_kojijunrei,391,ikaruga-001|nishinokyo-001|nishinokyo-005|sakurai-001|sakurai-002,true,「聖林寺の十一面観音」明示。両親寺文脈だが係り先は聖林寺で確定
+watsuji_kojijunrei,393,nara-city-007|nara-city-013|nishinokyo-004,true,「法華寺十一面観音」明示。「鑑真将来品目録」は人物言及(規約B採用時のみ nishinokyo-004)
+watsuji_kojijunrei,472,nara-city-008,false,
+kamei_yamatokoji,2,ikaruga-001|ikaruga-002|ikaruga-004|ikaruga-008,false,「思惟の菩薩」は別名未登録のため含めない
+kamei_yamatokoji,3,,false,
+kamei_yamatokoji,16,,false,
+kamei_yamatokoji,81,ikaruga-008,false,「古寺巡礼」は普通名詞用法
+kamei_yamatokoji,131,ikaruga-002|ikaruga-004|ikaruga-005|ikaruga-008|nishinokyo-001|nishinokyo-005|nara-city-008|nara-city-014,true,「香薬師」は新実体登録(v2.2)を前提に付与。「中宮寺の思惟像」の思惟像は別名未登録
+kamei_yamatokoji,208,nara-city-006|nara-city-008|nara-city-009,false,四天王・八部衆は実体未登録
+kamei_yamatokoji,214,,true,歌中「尼のみ寺のみほとけ」=中宮寺像の同一指示だが名称言及なし
+kamei_yamatokoji,277,ikaruga-006|nara-city-008,false,「この像」=法輪寺虚空蔵の指示語は含めない。「法華堂の執金剛神」の法華堂は含める
+kamei_yamatokoji,355,nishinokyo-004,true,「鑑真の率いた弟子達」人物言及(規約B採用時のみ付与)
+kamei_yamatokoji,429,nara-city-001,false,般若寺は未登録
+hori_yamatoji,1,,false,信濃の石仏(樹下)
+hori_yamatoji,15,ikaruga-002|ikaruga-003,false,「半跏思惟」明示あり
+hori_yamatoji,35,,false,海竜王寺は未登録(needs_review 追跡)
+hori_yamatoji,38,,false,同上
+hori_yamatoji,66,nara-city-004|nara-city-005,false,「伎芸天女」は伎芸天の言及
+hori_yamatoji,91,nara-city-009,false,日記見出し行
+hori_yamatoji,119,ikaruga-001,false,日記見出し行
+hori_yamatoji,131,ikaruga-008,false,「斑鳩物語」は書名
+hori_yamatoji,155,ikaruga-006|ikaruga-007,false,
+hori_yamatoji,231,,false,会話のみの段落
