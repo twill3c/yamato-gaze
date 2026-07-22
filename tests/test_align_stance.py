@@ -79,6 +79,24 @@ class TestT031Merge:
         ids_ = [p.passage_id for p in passages]
         assert len(ids_) == len(set(ids_))
 
+    def test_blank_line_breaks_merge(self, entities):
+        # 空行を挟む同一実体の連続段落は index が連続でも併合しない(Q-03 の逐語性)
+        text = (
+            "併合試験\n著者 名\n\n"
+            "　中宮寺に着く。\n"
+            "\n"
+            "　中宮寺の庭。\n"
+            "\n底本：「試」試文庫、試書房\n入力：A\n校正：B\n"
+        )
+        doc2 = parse(text)
+        tags = tag_paragraphs([p.base for p in doc2.paragraphs], entities).tags
+        ps = [p for p in build_passages("w", doc2, tags) if p.entity_id == "test-001"]
+        assert len(ps) == 2
+        # quote は raw_body スライスと逐語一致する
+        for p in ps:
+            sliced = doc2.raw_body[p.char_start : p.char_end].replace("\r\n", "\n")
+            assert sliced == p.quote
+
 
 # ---------------------------------------------------------------- T-032
 @pytest.mark.unit
