@@ -14,7 +14,7 @@ ikaruga-012,statue,橘夫人念持仏,橘夫人|念持仏,ikaruga-001,,,false,ct
 nishinokyo-001,temple,薬師寺,,,,,false,
 nishinokyo-002,statue,薬師三尊(薬師寺),薬師如来|薬師|日光菩薩|月光菩薩,nishinokyo-001,,,false,ctx=薬師如来|薬師|日光菩薩|月光菩薩
 nishinokyo-003,temple,唐招提寺,招提寺,,,,false,略称「招提寺」は本文頻出(和辻)
-nishinokyo-004,statue,鑑真和上像,鑑真,nishinokyo-003,,,false,
+nishinokyo-004,statue,鑑真和上,鑑真|鑑真像,nishinokyo-003,,,false,規約B: 人物言及と像言及を一実体として扱う(2026-07-23 承認)
 nishinokyo-005,statue,聖観音(薬師寺),聖観音,nishinokyo-001,,,false,ctx=聖観音 — 東院堂
 nara-city-001,temple,東大寺,,,,,false,
 nara-city-002,statue,盧舎那仏(東大寺),大仏,nara-city-001,,,false,ctx=大仏 — 飛鳥大仏等との衝突回避
@@ -29,6 +29,7 @@ nara-city-010,temple,大安寺,,,,,false,
 nara-city-011,statue,不空羂索観音(三月堂),不空羂索,nara-city-008,,,false,
 nara-city-012,statue,阿修羅像(興福寺),阿修羅,nara-city-006,,,false,言及僅少(亀井1・堀1)だが固有名で誤タグなし
 nara-city-013,statue,十一面観音(法華寺),十一面観音,nara-city-007,,,false,ctx=十一面観音 — 聖林寺像と共有別名
+nara-city-014,statue,香薬師(新薬師寺),香薬師如来,nara-city-003,,,false,白鳳小金銅仏(1943 盗難)。最長一致で「薬師」誤タグも解消
 sakurai-001,temple,聖林寺,,,,,false,桜井。route.json へのエリア追加は P5
 sakurai-002,statue,十一面観音(聖林寺),十一面観音,sakurai-001,,,false,ctx=十一面観音 — 法華寺像と共有別名
 minamiyamashiro-001,temple,浄瑠璃寺,九体寺,,,,false,E-2: 京都府木津川市(南山城)。通称九体寺
