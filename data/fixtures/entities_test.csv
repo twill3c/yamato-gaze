@@ -1,0 +1,7 @@
+entity_id,type,name,aliases,parent,lat,lon,verified,notes
+test-001,temple,中宮寺,御寺,,,,false,
+test-002,statue,菩薩半跏思惟像,観音|弥勒,test-001,,,false,ctx=観音|弥勒
+test-003,temple,法隆寺,斑鳩寺,,,,false,
+test-004,temple,薬師寺,,,,,false,
+test-005,statue,薬師三尊,薬師,test-004,,,false,ctx=薬師
+test-006,statue,聖観音(薬師寺),観音,test-004,,,false,ctx=観音
