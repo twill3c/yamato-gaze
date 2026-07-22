@@ -1,0 +1,7 @@
+# version: 0.1
+term,kind,note
+に似,pattern,活用対応は正規表現側で
+を想わせ,pattern,
+を思わせ,pattern,
+ギリシア,foreign_ref,域外参照の例示。固有名詞リストは v0.2 で拡充
+ゴシック,foreign_ref,

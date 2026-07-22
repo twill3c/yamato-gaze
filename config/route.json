@@ -1,0 +1,7 @@
+{
+  "route_id": "yamato-pilgrimage",
+  "display_name": "大和路 — 斑鳩から西ノ京へ",
+  "areas_order": ["ikaruga", "nishinokyo", "nara-city"],
+  "map_init": {"lat": 34.63, "lon": 135.76, "zoom": 12},
+  "note": "座標・ズームは P5 で調整。エリア追加(信濃篇の将来分離など)はここに足す"
+}

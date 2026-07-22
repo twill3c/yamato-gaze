@@ -1,0 +1,17 @@
+entity_id,type,name,aliases,parent,lat,lon,verified,notes
+ikaruga-001,temple,法隆寺,斑鳩寺,,,,false,
+ikaruga-002,temple,中宮寺,,,,,false,
+ikaruga-003,statue,菩薩半跏思惟像(中宮寺),半跏思惟像|弥勒|如意輪観音,ikaruga-002,,,false,別名「弥勒」「観音」系は親寺文脈規則の対象
+ikaruga-004,statue,百済観音,,ikaruga-001,,,false,「観音」単独は文脈規則の対象
+ikaruga-005,statue,救世観音,,ikaruga-001,,,false,夢殿。「観音」単独は文脈規則の対象
+ikaruga-006,temple,法輪寺,,,,,false,
+ikaruga-007,temple,法起寺,,,,,false,
+nishinokyo-001,temple,薬師寺,,,,,false,
+nishinokyo-002,statue,薬師三尊(薬師寺),薬師如来|日光菩薩|月光菩薩,nishinokyo-001,,,false,「薬師」単独は文脈規則の対象
+nishinokyo-003,temple,唐招提寺,,,,,false,
+nishinokyo-004,statue,鑑真和上像,鑑真,nishinokyo-003,,,false,
+nara-city-001,temple,東大寺,,,,,false,
+nara-city-002,statue,盧舎那仏(東大寺),大仏,nara-city-001,,,false,
+nara-city-003,temple,新薬師寺,,,,,false,
+nara-city-004,temple,秋篠寺,,,,,false,
+nara-city-005,statue,伎芸天(秋篠寺),,nara-city-004,,,false,
