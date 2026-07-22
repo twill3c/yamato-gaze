@@ -1,0 +1,775 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7346,
+     34.6142
+    ]
+   },
+   "properties": {
+    "entity_id": "ikaruga-001",
+    "name": "法隆寺",
+    "type": "temple",
+    "parent": null,
+    "authors_count": 3,
+    "passage_count": 68,
+    "lat": 34.6142,
+    "lon": 135.7346,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.742,
+     34.6137
+    ]
+   },
+   "properties": {
+    "entity_id": "ikaruga-002",
+    "name": "中宮寺",
+    "type": "temple",
+    "parent": null,
+    "authors_count": 3,
+    "passage_count": 34,
+    "lat": 34.6137,
+    "lon": 135.742,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.742,
+     34.6137
+    ]
+   },
+   "properties": {
+    "entity_id": "ikaruga-003",
+    "name": "菩薩半跏思惟像(中宮寺)",
+    "type": "statue",
+    "parent": "ikaruga-002",
+    "authors_count": 3,
+    "passage_count": 6,
+    "lat": 34.6137,
+    "lon": 135.742,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7346,
+     34.6142
+    ]
+   },
+   "properties": {
+    "entity_id": "ikaruga-004",
+    "name": "百済観音",
+    "type": "statue",
+    "parent": "ikaruga-001",
+    "authors_count": 3,
+    "passage_count": 26,
+    "lat": 34.6142,
+    "lon": 135.7346,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7346,
+     34.6142
+    ]
+   },
+   "properties": {
+    "entity_id": "ikaruga-005",
+    "name": "救世観音",
+    "type": "statue",
+    "parent": "ikaruga-001",
+    "authors_count": 2,
+    "passage_count": 13,
+    "lat": 34.6142,
+    "lon": 135.7346,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7362,
+     34.6217
+    ]
+   },
+   "properties": {
+    "entity_id": "ikaruga-006",
+    "name": "法輪寺",
+    "type": "temple",
+    "parent": null,
+    "authors_count": 3,
+    "passage_count": 18,
+    "lat": 34.6217,
+    "lon": 135.7362,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7411,
+     34.6274
+    ]
+   },
+   "properties": {
+    "entity_id": "ikaruga-007",
+    "name": "法起寺",
+    "type": "temple",
+    "parent": null,
+    "authors_count": 2,
+    "passage_count": 7,
+    "lat": 34.6274,
+    "lon": 135.7411,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.741,
+     34.6146
+    ]
+   },
+   "properties": {
+    "entity_id": "ikaruga-008",
+    "name": "夢殿",
+    "type": "temple",
+    "parent": "ikaruga-001",
+    "authors_count": 3,
+    "passage_count": 33,
+    "lat": 34.6146,
+    "lon": 135.741,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7346,
+     34.6142
+    ]
+   },
+   "properties": {
+    "entity_id": "ikaruga-009",
+    "name": "夢違観音",
+    "type": "statue",
+    "parent": "ikaruga-001",
+    "authors_count": 2,
+    "passage_count": 2,
+    "lat": 34.6142,
+    "lon": 135.7346,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.742,
+     34.6137
+    ]
+   },
+   "properties": {
+    "entity_id": "ikaruga-010",
+    "name": "天寿国曼荼羅",
+    "type": "statue",
+    "parent": "ikaruga-002",
+    "authors_count": 1,
+    "passage_count": 3,
+    "lat": 34.6137,
+    "lon": 135.742,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7362,
+     34.6217
+    ]
+   },
+   "properties": {
+    "entity_id": "ikaruga-011",
+    "name": "虚空蔵菩薩(法輪寺)",
+    "type": "statue",
+    "parent": "ikaruga-006",
+    "authors_count": 3,
+    "passage_count": 6,
+    "lat": 34.6217,
+    "lon": 135.7362,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7346,
+     34.6142
+    ]
+   },
+   "properties": {
+    "entity_id": "ikaruga-012",
+    "name": "橘夫人念持仏",
+    "type": "statue",
+    "parent": "ikaruga-001",
+    "authors_count": 2,
+    "passage_count": 7,
+    "lat": 34.6142,
+    "lon": 135.7346,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7845,
+     34.6684
+    ]
+   },
+   "properties": {
+    "entity_id": "nishinokyo-001",
+    "name": "薬師寺",
+    "type": "temple",
+    "parent": null,
+    "authors_count": 3,
+    "passage_count": 46,
+    "lat": 34.6684,
+    "lon": 135.7845,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7845,
+     34.6684
+    ]
+   },
+   "properties": {
+    "entity_id": "nishinokyo-002",
+    "name": "薬師三尊(薬師寺)",
+    "type": "statue",
+    "parent": "nishinokyo-001",
+    "authors_count": 2,
+    "passage_count": 24,
+    "lat": 34.6684,
+    "lon": 135.7845,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7847,
+     34.6756
+    ]
+   },
+   "properties": {
+    "entity_id": "nishinokyo-003",
+    "name": "唐招提寺",
+    "type": "temple",
+    "parent": null,
+    "authors_count": 3,
+    "passage_count": 29,
+    "lat": 34.6756,
+    "lon": 135.7847,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7847,
+     34.6756
+    ]
+   },
+   "properties": {
+    "entity_id": "nishinokyo-004",
+    "name": "鑑真和上",
+    "type": "statue",
+    "parent": "nishinokyo-003",
+    "authors_count": 2,
+    "passage_count": 9,
+    "lat": 34.6756,
+    "lon": 135.7847,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7845,
+     34.6684
+    ]
+   },
+   "properties": {
+    "entity_id": "nishinokyo-005",
+    "name": "聖観音(薬師寺)",
+    "type": "statue",
+    "parent": "nishinokyo-001",
+    "authors_count": 2,
+    "passage_count": 11,
+    "lat": 34.6684,
+    "lon": 135.7845,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.8399,
+     34.689
+    ]
+   },
+   "properties": {
+    "entity_id": "nara-city-001",
+    "name": "東大寺",
+    "type": "temple",
+    "parent": null,
+    "authors_count": 3,
+    "passage_count": 43,
+    "lat": 34.689,
+    "lon": 135.8399,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.8399,
+     34.689
+    ]
+   },
+   "properties": {
+    "entity_id": "nara-city-002",
+    "name": "盧舎那仏(東大寺)",
+    "type": "statue",
+    "parent": "nara-city-001",
+    "authors_count": 2,
+    "passage_count": 26,
+    "lat": 34.689,
+    "lon": 135.8399,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.8501,
+     34.6787
+    ]
+   },
+   "properties": {
+    "entity_id": "nara-city-003",
+    "name": "新薬師寺",
+    "type": "temple",
+    "parent": null,
+    "authors_count": 3,
+    "passage_count": 17,
+    "lat": 34.6787,
+    "lon": 135.8501,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7749,
+     34.7014
+    ]
+   },
+   "properties": {
+    "entity_id": "nara-city-004",
+    "name": "秋篠寺",
+    "type": "temple",
+    "parent": null,
+    "authors_count": 1,
+    "passage_count": 1,
+    "lat": 34.7014,
+    "lon": 135.7749,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7749,
+     34.7014
+    ]
+   },
+   "properties": {
+    "entity_id": "nara-city-005",
+    "name": "伎芸天(秋篠寺)",
+    "type": "statue",
+    "parent": "nara-city-004",
+    "authors_count": 2,
+    "passage_count": 3,
+    "lat": 34.7014,
+    "lon": 135.7749,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.8318,
+     34.683
+    ]
+   },
+   "properties": {
+    "entity_id": "nara-city-006",
+    "name": "興福寺",
+    "type": "temple",
+    "parent": null,
+    "authors_count": 2,
+    "passage_count": 15,
+    "lat": 34.683,
+    "lon": 135.8318,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7936,
+     34.6976
+    ]
+   },
+   "properties": {
+    "entity_id": "nara-city-007",
+    "name": "法華寺",
+    "type": "temple",
+    "parent": null,
+    "authors_count": 3,
+    "passage_count": 22,
+    "lat": 34.6976,
+    "lon": 135.7936,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.8444,
+     34.6889
+    ]
+   },
+   "properties": {
+    "entity_id": "nara-city-008",
+    "name": "東大寺法華堂",
+    "type": "temple",
+    "parent": "nara-city-001",
+    "authors_count": 3,
+    "passage_count": 28,
+    "lat": 34.6889,
+    "lon": 135.8444,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.8367,
+     34.6893
+    ]
+   },
+   "properties": {
+    "entity_id": "nara-city-009",
+    "name": "戒壇院",
+    "type": "temple",
+    "parent": "nara-city-001",
+    "authors_count": 3,
+    "passage_count": 15,
+    "lat": 34.6893,
+    "lon": 135.8367,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.8134,
+     34.6674
+    ]
+   },
+   "properties": {
+    "entity_id": "nara-city-010",
+    "name": "大安寺",
+    "type": "temple",
+    "parent": null,
+    "authors_count": 2,
+    "passage_count": 6,
+    "lat": 34.6674,
+    "lon": 135.8134,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.8444,
+     34.6889
+    ]
+   },
+   "properties": {
+    "entity_id": "nara-city-011",
+    "name": "不空羂索観音(三月堂)",
+    "type": "statue",
+    "parent": "nara-city-008",
+    "authors_count": 2,
+    "passage_count": 13,
+    "lat": 34.6889,
+    "lon": 135.8444,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.8318,
+     34.683
+    ]
+   },
+   "properties": {
+    "entity_id": "nara-city-012",
+    "name": "阿修羅像(興福寺)",
+    "type": "statue",
+    "parent": "nara-city-006",
+    "authors_count": 2,
+    "passage_count": 2,
+    "lat": 34.683,
+    "lon": 135.8318,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.7936,
+     34.6976
+    ]
+   },
+   "properties": {
+    "entity_id": "nara-city-013",
+    "name": "十一面観音(法華寺)",
+    "type": "statue",
+    "parent": "nara-city-007",
+    "authors_count": 2,
+    "passage_count": 8,
+    "lat": 34.6976,
+    "lon": 135.7936,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.8501,
+     34.6787
+    ]
+   },
+   "properties": {
+    "entity_id": "nara-city-014",
+    "name": "香薬師(新薬師寺)",
+    "type": "statue",
+    "parent": "nara-city-003",
+    "authors_count": 2,
+    "passage_count": 9,
+    "lat": 34.6787,
+    "lon": 135.8501,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.8443,
+     34.501
+    ]
+   },
+   "properties": {
+    "entity_id": "sakurai-001",
+    "name": "聖林寺",
+    "type": "temple",
+    "parent": null,
+    "authors_count": 2,
+    "passage_count": 17,
+    "lat": 34.501,
+    "lon": 135.8443,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.8443,
+     34.501
+    ]
+   },
+   "properties": {
+    "entity_id": "sakurai-002",
+    "name": "十一面観音(聖林寺)",
+    "type": "statue",
+    "parent": "sakurai-001",
+    "authors_count": 1,
+    "passage_count": 8,
+    "lat": 34.501,
+    "lon": 135.8443,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.8788,
+     34.7133
+    ]
+   },
+   "properties": {
+    "entity_id": "minamiyamashiro-001",
+    "name": "浄瑠璃寺",
+    "type": "temple",
+    "parent": null,
+    "authors_count": 2,
+    "passage_count": 12,
+    "lat": 34.7133,
+    "lon": 135.8788,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     135.8788,
+     34.7133
+    ]
+   },
+   "properties": {
+    "entity_id": "minamiyamashiro-002",
+    "name": "吉祥天(浄瑠璃寺)",
+    "type": "statue",
+    "parent": "minamiyamashiro-001",
+    "authors_count": 1,
+    "passage_count": 4,
+    "lat": 34.7133,
+    "lon": 135.8788,
+    "verified": "desk",
+    "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+   }
+  }
+ ]
+}

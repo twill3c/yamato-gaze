@@ -1,0 +1,292 @@
+{
+ "ikaruga-001": {
+  "passage_count": 68,
+  "authors_count": 3,
+  "by_author": {
+   "watsuji": 23,
+   "kamei": 40,
+   "hori": 5
+  }
+ },
+ "ikaruga-002": {
+  "passage_count": 34,
+  "authors_count": 3,
+  "by_author": {
+   "watsuji": 7,
+   "kamei": 24,
+   "hori": 3
+  }
+ },
+ "ikaruga-003": {
+  "passage_count": 6,
+  "authors_count": 3,
+  "by_author": {
+   "watsuji": 1,
+   "kamei": 4,
+   "hori": 1
+  }
+ },
+ "ikaruga-004": {
+  "passage_count": 26,
+  "authors_count": 3,
+  "by_author": {
+   "watsuji": 9,
+   "kamei": 16,
+   "hori": 1
+  }
+ },
+ "ikaruga-005": {
+  "passage_count": 13,
+  "authors_count": 2,
+  "by_author": {
+   "watsuji": 1,
+   "kamei": 12
+  }
+ },
+ "ikaruga-006": {
+  "passage_count": 18,
+  "authors_count": 3,
+  "by_author": {
+   "watsuji": 2,
+   "kamei": 14,
+   "hori": 2
+  }
+ },
+ "ikaruga-008": {
+  "passage_count": 33,
+  "authors_count": 3,
+  "by_author": {
+   "watsuji": 9,
+   "kamei": 18,
+   "hori": 6
+  }
+ },
+ "ikaruga-009": {
+  "passage_count": 2,
+  "authors_count": 2,
+  "by_author": {
+   "watsuji": 1,
+   "kamei": 1
+  }
+ },
+ "ikaruga-011": {
+  "passage_count": 6,
+  "authors_count": 3,
+  "by_author": {
+   "watsuji": 1,
+   "kamei": 4,
+   "hori": 1
+  }
+ },
+ "ikaruga-012": {
+  "passage_count": 7,
+  "authors_count": 2,
+  "by_author": {
+   "watsuji": 1,
+   "kamei": 6
+  }
+ },
+ "minamiyamashiro-001": {
+  "passage_count": 12,
+  "authors_count": 2,
+  "by_author": {
+   "watsuji": 5,
+   "hori": 7
+  }
+ },
+ "minamiyamashiro-002": {
+  "passage_count": 4,
+  "authors_count": 1,
+  "by_author": {
+   "watsuji": 4
+  }
+ },
+ "nara-city-001": {
+  "passage_count": 43,
+  "authors_count": 3,
+  "by_author": {
+   "watsuji": 14,
+   "kamei": 26,
+   "hori": 3
+  }
+ },
+ "nara-city-002": {
+  "passage_count": 26,
+  "authors_count": 2,
+  "by_author": {
+   "watsuji": 10,
+   "kamei": 16
+  }
+ },
+ "nara-city-003": {
+  "passage_count": 17,
+  "authors_count": 3,
+  "by_author": {
+   "watsuji": 4,
+   "kamei": 9,
+   "hori": 4
+  }
+ },
+ "nara-city-006": {
+  "passage_count": 15,
+  "authors_count": 2,
+  "by_author": {
+   "watsuji": 8,
+   "kamei": 7
+  }
+ },
+ "nara-city-007": {
+  "passage_count": 22,
+  "authors_count": 3,
+  "by_author": {
+   "watsuji": 16,
+   "kamei": 5,
+   "hori": 1
+  }
+ },
+ "nara-city-008": {
+  "passage_count": 28,
+  "authors_count": 3,
+  "by_author": {
+   "watsuji": 17,
+   "kamei": 9,
+   "hori": 2
+  }
+ },
+ "nara-city-009": {
+  "passage_count": 15,
+  "authors_count": 3,
+  "by_author": {
+   "watsuji": 6,
+   "kamei": 5,
+   "hori": 4
+  }
+ },
+ "nara-city-010": {
+  "passage_count": 6,
+  "authors_count": 2,
+  "by_author": {
+   "watsuji": 5,
+   "kamei": 1
+  }
+ },
+ "nara-city-011": {
+  "passage_count": 13,
+  "authors_count": 2,
+  "by_author": {
+   "watsuji": 4,
+   "kamei": 9
+  }
+ },
+ "nara-city-013": {
+  "passage_count": 8,
+  "authors_count": 2,
+  "by_author": {
+   "watsuji": 5,
+   "kamei": 3
+  }
+ },
+ "nara-city-014": {
+  "passage_count": 9,
+  "authors_count": 2,
+  "by_author": {
+   "watsuji": 4,
+   "kamei": 5
+  }
+ },
+ "nishinokyo-001": {
+  "passage_count": 46,
+  "authors_count": 3,
+  "by_author": {
+   "watsuji": 21,
+   "kamei": 23,
+   "hori": 2
+  }
+ },
+ "nishinokyo-002": {
+  "passage_count": 24,
+  "authors_count": 2,
+  "by_author": {
+   "watsuji": 12,
+   "kamei": 12
+  }
+ },
+ "nishinokyo-003": {
+  "passage_count": 29,
+  "authors_count": 3,
+  "by_author": {
+   "watsuji": 16,
+   "kamei": 9,
+   "hori": 4
+  }
+ },
+ "nishinokyo-004": {
+  "passage_count": 9,
+  "authors_count": 2,
+  "by_author": {
+   "watsuji": 6,
+   "kamei": 3
+  }
+ },
+ "nishinokyo-005": {
+  "passage_count": 11,
+  "authors_count": 2,
+  "by_author": {
+   "watsuji": 9,
+   "kamei": 2
+  }
+ },
+ "sakurai-001": {
+  "passage_count": 17,
+  "authors_count": 2,
+  "by_author": {
+   "watsuji": 16,
+   "hori": 1
+  }
+ },
+ "sakurai-002": {
+  "passage_count": 8,
+  "authors_count": 1,
+  "by_author": {
+   "watsuji": 8
+  }
+ },
+ "ikaruga-007": {
+  "passage_count": 7,
+  "authors_count": 2,
+  "by_author": {
+   "kamei": 5,
+   "hori": 2
+  }
+ },
+ "ikaruga-010": {
+  "passage_count": 3,
+  "authors_count": 1,
+  "by_author": {
+   "kamei": 3
+  }
+ },
+ "nara-city-005": {
+  "passage_count": 3,
+  "authors_count": 2,
+  "by_author": {
+   "kamei": 1,
+   "hori": 2
+  }
+ },
+ "nara-city-012": {
+  "passage_count": 2,
+  "authors_count": 2,
+  "by_author": {
+   "kamei": 1,
+   "hori": 1
+  }
+ },
+ "nara-city-004": {
+  "passage_count": 1,
+  "authors_count": 1,
+  "by_author": {
+   "hori": 1
+  }
+ }
+}
