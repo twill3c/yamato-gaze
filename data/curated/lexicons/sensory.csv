@@ -1,7 +1,33 @@
-# version: 0.1
+# version: 1.0
 term,kind,note
-匂い,noun,
-光,noun,v0.2で多義性検討
-ひんやり,mimetic,
-仄暗,stem,
 眺め,verb_stem,
+見上げ,verb_stem,
+見下ろ,verb_stem,
+見つめ,verb_stem,
+見入,verb_stem,
+光,stem,月光・日光菩薩との混在承知で採用(2026-07-23 承認)
+輝,stem,
+陰翳,noun,
+陰影,noun,
+仄暗,stem,
+眩し,stem,
+まぶし,stem,
+艶,noun,
+響,stem,「音」単字は観音と衝突するため不採用
+物音,noun,
+静寂,noun,
+静けさ,noun,
+聞こえ,verb_stem,
+匂,stem,匂い/匂う
+香り,noun,
+薫,stem,
+冷た,stem,
+ひんやり,mimetic,
+温か,stem,
+暖か,stem,
+柔らか,stem,
+なめらか,stem,
+滑らか,stem,
+触れ,verb_stem,
+涼し,stem,
+湿,stem,
