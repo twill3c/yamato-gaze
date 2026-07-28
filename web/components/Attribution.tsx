@@ -49,7 +49,9 @@ export default function Attribution({
       </div>
       {meta && (
         <div className="repro">
-          再現性: 辞書 {meta.lexicon_version} ／ 生成 {meta.generated_at} ／ {meta.n_passages} 節
+          {/* 表示は日付まで。完全なタイムスタンプは meta.json(DL 可)に保持 */}
+          再現性: 辞書 {meta.lexicon_version} ／ 生成 {meta.generated_at.slice(0, 10)} ／{" "}
+          {meta.n_passages} 節
         </div>
       )}
     </footer>
