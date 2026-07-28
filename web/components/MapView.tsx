@@ -6,6 +6,7 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef } from "react";
 
+import { spiderfyOffsets } from "@/lib/spiderfy";
 import { AUTHORS_COUNT_COLOR, type SiteFeature } from "@/lib/types";
 
 const GSI_PALE_STYLE: maplibregl.StyleSpecification = {
@@ -63,6 +64,16 @@ export default function MapView({
     const map = mapRef.current;
     if (!map) return;
     markersRef.current.forEach((m) => m.remove());
+    // 同座標(寺+所蔵仏像)は花弁状のピクセルオフセットで散らす(座標データは不変)
+    const offsets = spiderfyOffsets(
+      features.map((f) => ({
+        entity_id: f.properties.entity_id,
+        lat: f.properties.lat,
+        lon: f.properties.lon,
+        type: f.properties.type,
+        size: pinSize(f.properties.passage_count),
+      })),
+    );
     markersRef.current = features.map((f) => {
       const pr = f.properties;
       const el = document.createElement("button");
@@ -78,7 +89,10 @@ export default function MapView({
         e.stopPropagation();
         onSelect(pr.entity_id);
       });
-      return new maplibregl.Marker({ element: el })
+      return new maplibregl.Marker({
+        element: el,
+        offset: offsets.get(pr.entity_id) ?? [0, 0],
+      })
         .setLngLat(f.geometry.coordinates)
         .addTo(map);
     });
