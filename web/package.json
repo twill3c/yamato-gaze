@@ -6,6 +6,7 @@
     "dev": "next dev",
     "prebuild": "node scripts/sync-license.mjs",
     "build": "next build",
+    "postbuild": "node scripts/check-links.mjs",
     "test": "vitest run"
   },
   "dependencies": {

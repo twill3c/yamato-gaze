@@ -132,7 +132,7 @@ export default function ScatterPage() {
           </div>
         )}
       </main>
-      <Attribution meta={meta} dataPrefix="../data" />
+      <Attribution meta={meta} dataPrefix="../data" basePrefix="../" />
     </div>
   );
 }
