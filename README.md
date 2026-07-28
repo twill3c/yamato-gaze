@@ -17,6 +17,27 @@ ISLP(Python)学習前のテキスト処理実践、および R/stylo への入�
 
 theme-survey.md は docs/ へコピーして最初のコミットに含めること。
 
+## 実行(P5 時点)
+
+```powershell
+pip install pytest "fugashi[unidic-lite]"
+make bronze                    # 青空文庫から 8 作品を取得(手動実行のみ, N-02)
+python -m gold.export          # Gold 生成(sites/passages/counts)
+python -m gold.validate        # 品質検査(Q-02/Q-03/三角測量/契約)
+python -m pytest -q            # 84 テスト(フィクスチャ駆動・ネットワーク不要)
+cd web; npm install; npm run dev   # 三面鏡 UI(localhost:3000)
+```
+
+## デプロイ(Vercel)
+
+docs/deploy.md 参照。Root Directory = `web`、Framework = Next.js(静的エクスポート)。
+
+## ライセンス
+
+- コード: MIT(LICENSE)
+- データ: 引用本文は PD(青空文庫由来・底本表記付き)、自作データは CC BY 4.0
+  (LICENSE-DATA.md — N-04 の二層構成)
+
 ## 締切
 
 P5(Vercel 公開)= 奈良行きの 2 週間前。P6 = 現地検証(スマホで三面鏡を開き、
