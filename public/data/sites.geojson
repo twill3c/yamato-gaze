@@ -28,8 +28,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.742,
-     34.6137
+     135.7437,
+     34.616
     ]
    },
    "properties": {
@@ -39,8 +39,8 @@
     "parent": null,
     "authors_count": 3,
     "passage_count": 34,
-    "lat": 34.6137,
-    "lon": 135.742,
+    "lat": 34.616,
+    "lon": 135.7437,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }
@@ -50,8 +50,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.742,
-     34.6137
+     135.7437,
+     34.616
     ]
    },
    "properties": {
@@ -61,8 +61,8 @@
     "parent": "ikaruga-002",
     "authors_count": 3,
     "passage_count": 6,
-    "lat": 34.6137,
-    "lon": 135.742,
+    "lat": 34.616,
+    "lon": 135.7437,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }
@@ -116,8 +116,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.7362,
-     34.6217
+     135.739,
+     34.6225
     ]
    },
    "properties": {
@@ -127,8 +127,8 @@
     "parent": null,
     "authors_count": 3,
     "passage_count": 18,
-    "lat": 34.6217,
-    "lon": 135.7362,
+    "lat": 34.6225,
+    "lon": 135.739,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }
@@ -138,8 +138,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.7411,
-     34.6274
+     135.7461,
+     34.6228
     ]
    },
    "properties": {
@@ -149,8 +149,8 @@
     "parent": null,
     "authors_count": 2,
     "passage_count": 7,
-    "lat": 34.6274,
-    "lon": 135.7411,
+    "lat": 34.6228,
+    "lon": 135.7461,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }
@@ -204,8 +204,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.742,
-     34.6137
+     135.7437,
+     34.616
     ]
    },
    "properties": {
@@ -215,8 +215,8 @@
     "parent": "ikaruga-002",
     "authors_count": 1,
     "passage_count": 3,
-    "lat": 34.6137,
-    "lon": 135.742,
+    "lat": 34.616,
+    "lon": 135.7437,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }
@@ -226,8 +226,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.7362,
-     34.6217
+     135.739,
+     34.6225
     ]
    },
    "properties": {
@@ -237,8 +237,8 @@
     "parent": "ikaruga-006",
     "authors_count": 3,
     "passage_count": 6,
-    "lat": 34.6217,
-    "lon": 135.7362,
+    "lat": 34.6225,
+    "lon": 135.739,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }
@@ -424,8 +424,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.8501,
-     34.6787
+     135.847,
+     34.6763
     ]
    },
    "properties": {
@@ -435,8 +435,8 @@
     "parent": null,
     "authors_count": 3,
     "passage_count": 17,
-    "lat": 34.6787,
-    "lon": 135.8501,
+    "lat": 34.6763,
+    "lon": 135.847,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }
@@ -512,8 +512,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.7936,
-     34.6976
+     135.8041,
+     34.6922
     ]
    },
    "properties": {
@@ -523,8 +523,8 @@
     "parent": null,
     "authors_count": 3,
     "passage_count": 22,
-    "lat": 34.6976,
-    "lon": 135.7936,
+    "lat": 34.6922,
+    "lon": 135.8041,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }
@@ -578,8 +578,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.8134,
-     34.6674
+     135.8143,
+     34.667
     ]
    },
    "properties": {
@@ -589,8 +589,8 @@
     "parent": null,
     "authors_count": 2,
     "passage_count": 6,
-    "lat": 34.6674,
-    "lon": 135.8134,
+    "lat": 34.667,
+    "lon": 135.8143,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }
@@ -644,8 +644,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.7936,
-     34.6976
+     135.8041,
+     34.6922
     ]
    },
    "properties": {
@@ -655,8 +655,8 @@
     "parent": "nara-city-007",
     "authors_count": 2,
     "passage_count": 8,
-    "lat": 34.6976,
-    "lon": 135.7936,
+    "lat": 34.6922,
+    "lon": 135.8041,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }
@@ -666,8 +666,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.8501,
-     34.6787
+     135.847,
+     34.6763
     ]
    },
    "properties": {
@@ -677,8 +677,8 @@
     "parent": "nara-city-003",
     "authors_count": 2,
     "passage_count": 9,
-    "lat": 34.6787,
-    "lon": 135.8501,
+    "lat": 34.6763,
+    "lon": 135.847,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }
@@ -688,8 +688,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.8443,
-     34.501
+     135.8514,
+     34.4917
     ]
    },
    "properties": {
@@ -699,8 +699,8 @@
     "parent": null,
     "authors_count": 2,
     "passage_count": 17,
-    "lat": 34.501,
-    "lon": 135.8443,
+    "lat": 34.4917,
+    "lon": 135.8514,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }
@@ -710,8 +710,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.8443,
-     34.501
+     135.8514,
+     34.4917
     ]
    },
    "properties": {
@@ -721,8 +721,8 @@
     "parent": "sakurai-001",
     "authors_count": 1,
     "passage_count": 8,
-    "lat": 34.501,
-    "lon": 135.8443,
+    "lat": 34.4917,
+    "lon": 135.8514,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }
@@ -732,8 +732,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.8788,
-     34.7133
+     135.8731,
+     34.7161
     ]
    },
    "properties": {
@@ -743,8 +743,8 @@
     "parent": null,
     "authors_count": 2,
     "passage_count": 12,
-    "lat": 34.7133,
-    "lon": 135.8788,
+    "lat": 34.7161,
+    "lon": 135.8731,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }
@@ -754,8 +754,8 @@
    "geometry": {
     "type": "Point",
     "coordinates": [
-     135.8788,
-     34.7133
+     135.8731,
+     34.7161
     ]
    },
    "properties": {
@@ -765,8 +765,8 @@
     "parent": "minamiyamashiro-001",
     "authors_count": 1,
     "passage_count": 4,
-    "lat": 34.7133,
-    "lon": 135.8788,
+    "lat": 34.7161,
+    "lon": 135.8731,
     "verified": "desk",
     "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
    }

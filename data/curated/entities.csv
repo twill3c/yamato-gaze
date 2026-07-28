@@ -1,11 +1,11 @@
 entity_id,type,name,aliases,parent,lat,lon,verified,notes
 ikaruga-001,temple,法隆寺,斑鳩寺,,34.6142,135.7346,desk,座標=西院金堂付近(2026-07-23 desk承認)
-ikaruga-002,temple,中宮寺,,,34.6137,135.7420,desk,座標低確信 — 地理院地図で要確認
+ikaruga-002,temple,中宮寺,,,34.6160,135.7437,desk,座標確認済(地理院地図)
 ikaruga-003,statue,菩薩半跏思惟像(中宮寺),半跏思惟像|半跏思惟|弥勒|如意輪観音|御仏,ikaruga-002,,,false,ctx=弥勒|如意輪観音|御仏 — 親寺(中宮寺)文脈必須
 ikaruga-004,statue,百済観音,,ikaruga-001,,,false,「観音」単独は登録しない(needs_review 経由)
 ikaruga-005,statue,救世観音,,ikaruga-001,,,false,夢殿本尊
-ikaruga-006,temple,法輪寺,,,34.6217,135.7362,desk,座標低確信 — 要確認
-ikaruga-007,temple,法起寺,,,34.6274,135.7411,desk,座標低確信 — 要確認
+ikaruga-006,temple,法輪寺,,,34.6225,135.7390,desk,座標確認済(地理院地図)
+ikaruga-007,temple,法起寺,,,34.6228,135.7461,desk,座標確認済(地理院地図)
 ikaruga-008,temple,夢殿,,ikaruga-001,34.6146,135.7410,desk,法隆寺東院の堂宇。parent は文脈親として使用
 ikaruga-009,statue,夢違観音,,ikaruga-001,,,false,
 ikaruga-010,statue,天寿国曼荼羅,天寿国繍帳,ikaruga-002,,,false,繍帳(工芸)だが statue 型で扱う
@@ -18,19 +18,19 @@ nishinokyo-004,statue,鑑真和上,鑑真|鑑真像,nishinokyo-003,,,false,規�
 nishinokyo-005,statue,聖観音(薬師寺),聖観音,nishinokyo-001,,,false,ctx=聖観音 — 東院堂
 nara-city-001,temple,東大寺,,,34.6890,135.8399,desk,座標=大仏殿付近
 nara-city-002,statue,盧舎那仏(東大寺),大仏,nara-city-001,,,false,ctx=大仏 — 飛鳥大仏等との衝突回避
-nara-city-003,temple,新薬師寺,,,34.6787,135.8501,desk,座標低確信 — 要確認(高畑)
+nara-city-003,temple,新薬師寺,,,34.6763,135.8470,desk,座標確認済(地理院地図)(高畑)
 nara-city-004,temple,秋篠寺,,,34.7014,135.7749,desk,E-4: 単著者(堀)だが維持
 nara-city-005,statue,伎芸天(秋篠寺),,nara-city-004,,,false,
 nara-city-006,temple,興福寺,,,34.6830,135.8318,desk,座標=中金堂付近
-nara-city-007,temple,法華寺,法華滅罪寺,,34.6976,135.7936,desk,座標低確信 — 要確認。佐保・佐紀。尼寺。正式名は法華滅罪寺
+nara-city-007,temple,法華寺,法華滅罪寺,,34.6922,135.8041,desk,座標確認済(地理院地図)。佐保・佐紀。尼寺。正式名は法華滅罪寺
 nara-city-008,temple,東大寺法華堂,三月堂|法華堂,nara-city-001,34.6889,135.8444,desk,東大寺境内堂宇。parent は文脈親として使用
 nara-city-009,temple,戒壇院,戒壇,nara-city-001,34.6893,135.8367,desk,ctx=戒壇 — 東大寺境内
-nara-city-010,temple,大安寺,,,34.6674,135.8134,desk,座標低確信 — 要確認
+nara-city-010,temple,大安寺,,,34.6670,135.8143,desk,座標確認済(地理院地図)
 nara-city-011,statue,不空羂索観音(三月堂),不空羂索,nara-city-008,,,false,
 nara-city-012,statue,阿修羅像(興福寺),阿修羅,nara-city-006,,,false,言及僅少(亀井1・堀1)だが固有名で誤タグなし
 nara-city-013,statue,十一面観音(法華寺),十一面観音,nara-city-007,,,false,ctx=十一面観音 — 聖林寺像と共有別名
 nara-city-014,statue,香薬師(新薬師寺),香薬師如来,nara-city-003,,,false,白鳳小金銅仏(1943 盗難)。最長一致で「薬師」誤タグも解消
-sakurai-001,temple,聖林寺,,,34.5010,135.8443,desk,座標低確信 — 要確認。桜井。route.json へのエリア追加は P5
+sakurai-001,temple,聖林寺,,,34.4917,135.8514,desk,座標確認済(地理院地図)。桜井。route.json へのエリア追加は P5
 sakurai-002,statue,十一面観音(聖林寺),十一面観音,sakurai-001,,,false,ctx=十一面観音 — 法華寺像と共有別名
-minamiyamashiro-001,temple,浄瑠璃寺,九体寺,,34.7133,135.8788,desk,座標低確信 — 要確認。E-2: 京都府木津川市(南山城)。通称九体寺
+minamiyamashiro-001,temple,浄瑠璃寺,九体寺,,34.7161,135.8731,desk,座標確認済(地理院地図)。E-2: 京都府木津川市(南山城)。通称九体寺
 minamiyamashiro-002,statue,吉祥天(浄瑠璃寺),吉祥天|吉祥天女,minamiyamashiro-001,,,false,ctx=吉祥天|吉祥天女
