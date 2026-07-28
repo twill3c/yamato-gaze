@@ -1,5 +1,8 @@
 # デプロイ手順(loop_008 / F-10)
 
+**本番 URL(2026-07-23 稼働確認)**: https://yamato-gaze.vercel.app
+(地図+三面鏡: `/` / 散布図: `/scatter/`)
+
 ## 構成
 
 - Next.js 静的エクスポート(web/next.config.mjs: `output: "export"`)。サーバ・環境変数不要
