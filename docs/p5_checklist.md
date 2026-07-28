@@ -24,6 +24,11 @@
       浄瑠璃寺)を地理院地図で確認し、必要なら entities.csv を修正 → `python -m gold.export`
 - [ ] 修正後 `python -m gold.validate` が OK
 
+## 静的エクスポート成果物(loop_008 で追加 — VERIF-GAP 対策)
+
+- [ ] `cd web && npm run build` 後、`out/index.html` と `out/scatter/index.html` が存在する
+      (dev サーバでは検出できないルーティング検査)
+
 ## N-05(スマホ・オフライン)— loop_008 デプロイ後
 
 - [ ] スマホ実機で初期ロード後、機内モードにして地図以外(三面鏡・散布図)が閲覧可能
