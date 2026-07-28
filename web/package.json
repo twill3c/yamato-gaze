@@ -2,7 +2,9 @@
   "name": "yamato-gaze-web",
   "private": true,
   "scripts": {
+    "predev": "node scripts/sync-license.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/sync-license.mjs",
     "build": "next build",
     "test": "vitest run"
   },

@@ -2,12 +2,16 @@
 // loop_009: 再現性情報(lexicon_version・生成日時)とデータ直リンク(CC BY の実利化)
 import type { SiteMeta } from "@/lib/loadings";
 
+const GITHUB_URL = "https://github.com/twill3c/yamato-gaze";
+
 export default function Attribution({
   meta,
   dataPrefix = "data",
+  basePrefix = "",
 }: {
   meta?: SiteMeta | null;
   dataPrefix?: string;
+  basePrefix?: string;
 }) {
   return (
     <footer className="attribution">
@@ -36,6 +40,12 @@ export default function Attribution({
         <a href={`${dataPrefix}/meta.json`} download>
           meta.json
         </a>
+        {" ｜ コード: MIT("}
+        <a href={GITHUB_URL} target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+        {")｜ "}
+        <a href={`${basePrefix}about/`}>ライセンス詳細</a>
       </div>
       {meta && (
         <div className="repro">

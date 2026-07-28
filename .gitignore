@@ -6,3 +6,4 @@ out/
 .wt-baseline.json
 data/bronze/
 .env*
+web/public/LICENSE-DATA.md

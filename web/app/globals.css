@@ -110,6 +110,15 @@ body {
 
 .pc-note { font-size: 11.5px; color: var(--ink-muted); margin: 4px 0 0; }
 
+/* about ページ */
+.about-main { flex: 1; min-height: 0; overflow: auto; padding: 12px 20px 24px; max-width: 760px; }
+.about-main h2 { font-size: 15px; margin: 18px 0 6px; }
+.about-main h3 { font-size: 13.5px; margin: 14px 0 4px; }
+.about-main p, .about-main li { font-size: 13px; line-height: 1.8; margin: 4px 0; }
+.about-main ul { margin: 2px 0; padding-left: 1.4em; }
+.about-main a { color: var(--ink-secondary); }
+.about-fallback { color: var(--ink-muted); }
+
 @media (max-width: 640px) {
   .mirror { width: calc(100% - 24px); }
   .mirror-columns { grid-template-columns: 1fr; }
