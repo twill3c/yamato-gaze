@@ -7,11 +7,13 @@ import { useEffect, useState } from "react";
 import Attribution from "@/components/Attribution";
 import MapView from "@/components/MapView";
 import MirrorPanel from "@/components/MirrorPanel";
+import type { SiteMeta } from "@/lib/loadings";
 import { AUTHORS_COUNT_COLOR, type Passage, type SiteFeature } from "@/lib/types";
 
 export default function Page() {
   const [features, setFeatures] = useState<SiteFeature[]>([]);
   const [passages, setPassages] = useState<Passage[]>([]);
+  const [meta, setMeta] = useState<SiteMeta | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -25,6 +27,10 @@ export default function Page() {
       .then((r) => r.json())
       .then((ps) => setPassages(ps as Passage[]))
       .catch(() => setPassages([]));
+    fetch("data/meta.json")
+      .then((r) => r.json())
+      .then(setMeta)
+      .catch(() => setMeta(null));
   }, []);
 
   const selected = features.find((f) => f.properties.entity_id === selectedId) ?? null;
@@ -64,7 +70,7 @@ export default function Page() {
           />
         )}
       </main>
-      <Attribution />
+      <Attribution meta={meta} />
     </div>
   );
 }

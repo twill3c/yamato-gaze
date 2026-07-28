@@ -7,10 +7,12 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 import Attribution from "@/components/Attribution";
+import { loadingsSummary, type SiteMeta } from "@/lib/loadings";
 import { shapeScatter, type ScatterPoint } from "@/lib/scatter";
 import {
   AUTHOR_COLOR,
   AUTHOR_LABEL,
+  FEATURE_LABEL,
   type Author,
   type EntityCounts,
   type Passage,
@@ -23,6 +25,7 @@ const PAD = 40;
 export default function ScatterPage() {
   const [passages, setPassages] = useState<Passage[]>([]);
   const [counts, setCounts] = useState<Record<string, EntityCounts>>({});
+  const [meta, setMeta] = useState<SiteMeta | null>(null);
   const [multiOnly, setMultiOnly] = useState(false);
   const [hover, setHover] = useState<ScatterPoint | null>(null);
 
@@ -35,7 +38,17 @@ export default function ScatterPage() {
       .then((r) => r.json())
       .then(setCounts)
       .catch(() => setCounts({}));
+    fetch("../data/meta.json")
+      .then((r) => r.json())
+      .then(setMeta)
+      .catch(() => setMeta(null));
   }, []);
+
+  // 軸ラベルの「解釈」に負荷量根拠を添える(ラベル自体は人間の読み)
+  const pcNote = (i: 0 | 1) =>
+    meta
+      ? `負荷量上位: ${loadingsSummary(meta.pca.components[i], meta.pca.feature_order, FEATURE_LABEL, 3)}(寄与率 ${(meta.pca.explained[i] * 100).toFixed(1)}%)`
+      : "";
 
   const data = useMemo(
     () => shapeScatter(passages, counts, { multiOnly }),
@@ -87,10 +100,12 @@ export default function ScatterPage() {
           <line x1={PAD} y1={sy(0)} x2={W - PAD} y2={sy(0)} className="axis" />
           <line x1={sx(0)} y1={PAD} x2={sx(0)} y2={H - PAD} className="axis" />
           <text x={W - PAD} y={sy(0) - 6} className="axis-label" textAnchor="end">
-            PC1(内省 ⇔ スケッチ)
+            <title>{pcNote(0)}</title>
+            PC1(解釈: 内省 ⇔ スケッチ)
           </text>
           <text x={sx(0) + 6} y={PAD + 4} className="axis-label">
-            PC2(美術史比較)
+            <title>{pcNote(1)}</title>
+            PC2(解釈: 美術史比較)
           </text>
           {data.points.map((p) => (
             <Link key={p.passage_id} href={`../?e=${p.entity_id}`}>
@@ -106,13 +121,18 @@ export default function ScatterPage() {
             </Link>
           ))}
         </svg>
+        {meta && (
+          <p className="pc-note">
+            軸ラベルは負荷量からの解釈。PC1 {pcNote(0)} / PC2 {pcNote(1)}
+          </p>
+        )}
         {hover && (
           <div className="tooltip" role="status">
             <strong>{AUTHOR_LABEL[hover.author]}</strong> — {hover.quoteHead}…
           </div>
         )}
       </main>
-      <Attribution />
+      <Attribution meta={meta} dataPrefix="../data" />
     </div>
   );
 }

@@ -17,6 +17,27 @@ LICENSE_STR = "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
 PUBLIC_DIRS = [Path("public/data"), Path("web/public/data")]
 
 
+def build_meta(
+    lexicon_version: str,
+    pca: dict,
+    n_passages: int,
+    generated_at: str | None = None,
+) -> dict:
+    """meta.json(loop_009): UI での再現性表示(Q-04 の画面反映)に使う。"""
+    if generated_at is None:
+        import datetime as dt
+
+        jst = dt.timezone(dt.timedelta(hours=9))
+        generated_at = dt.datetime.now(jst).replace(microsecond=0).isoformat()
+    return {
+        "generated_at": generated_at,
+        "lexicon_version": lexicon_version,
+        "n_passages": n_passages,
+        "pca": pca,
+        "license": LICENSE_STR,
+    }
+
+
 def format_source_note(sn: dict) -> str:
     parts = [f"底本:「{sn['底本名']}」{sn.get('底本レーベル') or ''}、{sn.get('底本出版社') or ''}".rstrip("、 ")]
     if sn.get("入力者"):
@@ -136,6 +157,17 @@ def build_all() -> dict:
 
     counts = build_counts(passages)
     sites, excluded = build_sites(load_entity_rows(), counts)
+    pca_meta = {
+        "feature_order": FEATURE_KEYS,
+        "components": [[round(c, 4) for c in comp] for comp in pca.components],
+        "explained": [round(e, 4) for e in pca.explained],
+        "standardize": True,
+    }
+    meta = build_meta(
+        lexicon_version=passages[0]["lexicon_version"] if passages else "",
+        pca=pca_meta,
+        n_passages=len(passages),
+    )
     report = {
         "n_passages": len(passages),
         "n_entities_with_passages": len(counts),
@@ -149,6 +181,7 @@ def build_all() -> dict:
         "sites": sites,
         "passages": passages,
         "counts": counts,
+        "meta": meta,
         "report": report,
         "raw_bodies": raw_bodies,
     }
@@ -166,6 +199,9 @@ def main() -> int:
         )
         (base / "counts.json").write_text(
             json.dumps(gold["counts"], ensure_ascii=False, indent=1), encoding="utf-8"
+        )
+        (base / "meta.json").write_text(
+            json.dumps(gold["meta"], ensure_ascii=False, indent=1), encoding="utf-8"
         )
     out = Path("out/quality_report.json")
     out.parent.mkdir(parents=True, exist_ok=True)

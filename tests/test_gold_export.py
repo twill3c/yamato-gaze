@@ -1,7 +1,9 @@
 # T-05x — gold/export.py・gold/validate.py(Gold 契約と品質検査)
+import re
+
 import pytest
 
-from gold.export import build_counts, build_sites
+from gold.export import build_counts, build_meta, build_sites
 from gold.validate import (
     check_contract,
     check_coverage,
@@ -146,3 +148,30 @@ class TestT055Contract:
 
     def test_missing_lexicon_version_fails(self):  # Q-04 との接続(T-033 の gold 側)
         assert check_contract([make_passage(lexicon_version="")], {"type": "FeatureCollection", "features": []})
+
+
+# ---------------------------------------------------------------- meta.json(loop_009)
+@pytest.mark.validation
+class TestMetaContract:
+    PCA = {
+        "feature_order": ["comparative", "religious"],
+        "components": [[0.9, -0.1], [0.1, 0.8]],
+        "explained": [0.4, 0.2],
+        "standardize": True,
+    }
+
+    def test_meta_fields(self):
+        meta = build_meta(
+            lexicon_version="comparative:1.0|religious:1.0|sensory:1.0",
+            pca=self.PCA,
+            n_passages=591,
+            generated_at="2026-07-23T12:00:00+09:00",
+        )
+        assert meta["lexicon_version"] == "comparative:1.0|religious:1.0|sensory:1.0"
+        assert meta["n_passages"] == 591
+        assert meta["pca"]["components"] == self.PCA["components"]
+        assert "license" in meta
+
+    def test_generated_at_iso_jst(self):
+        meta = build_meta("v", self.PCA, 1, generated_at=None)
+        assert re.match(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\+09:00$", meta["generated_at"])
