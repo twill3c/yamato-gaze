@@ -285,7 +285,7 @@ def parse(text: str) -> AozoraDoc:
 # ---------------------------------------------------------------- 取得(bronze)
 
 
-UA = "yamato-gaze/0.1 (Aozora Bunko corpus fetch; contact: twill3c@gmail.com)"
+UA = "yamato-gaze/0.1 (Aozora Bunko corpus fetch; contact: https://github.com/twill3c)"
 BRONZE_DIR = Path("data/bronze")
 CORPUS_CONFIG = Path("config/corpus.json")
 
