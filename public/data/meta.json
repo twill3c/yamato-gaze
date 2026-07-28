@@ -1,0 +1,42 @@
+{
+ "generated_at": "2026-07-28T15:38:18+09:00",
+ "lexicon_version": "comparative:1.0|religious:1.0|sensory:1.0",
+ "n_passages": 591,
+ "pca": {
+  "feature_order": [
+   "comparative",
+   "religious",
+   "sensory",
+   "first_person",
+   "present_tense",
+   "sent_len",
+   "comma_density"
+  ],
+  "components": [
+   [
+    -0.0587,
+    0.1148,
+    0.0998,
+    -0.4599,
+    0.5573,
+    -0.4875,
+    -0.4623
+   ],
+   [
+    0.6427,
+    -0.1114,
+    0.4847,
+    -0.3398,
+    0.1447,
+    0.4494,
+    0.0338
+   ]
+  ],
+  "explained": [
+   0.2474,
+   0.1689
+  ],
+  "standardize": true
+ },
+ "license": "quotes: PD (Aozora Bunko) / data: CC BY 4.0"
+}
