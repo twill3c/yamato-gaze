@@ -57,7 +57,12 @@ export default function MapView({
       attributionControl: { compact: false },
     });
     mapRef.current.addControl(new maplibregl.NavigationControl({ showCompass: false }));
+    // コンテナが後からサイズ確定する環境(フレックス計算・dvh 非対応等)での
+    // 0 サイズ初期化対策: サイズ変化のたびに再計測させる
+    const ro = new ResizeObserver(() => mapRef.current?.resize());
+    ro.observe(containerRef.current);
     return () => {
+      ro.disconnect();
       mapRef.current?.remove();
       mapRef.current = null;
     };
@@ -66,12 +71,19 @@ export default function MapView({
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
-    // 初期表示: 全ピンの bbox にフィット(画面幅・解像度に依存しない)
+    // 初期表示: 全ピンの bbox にフィット(画面幅・解像度に依存しない)。
+    // スタイル読込前・サイズ未確定のタイミングで呼ぶと広域カメラに化けるため、
+    // load 前なら once('load') に遅延し、直前に resize で実寸を再計測する
     if (!fittedRef.current && features.length > 0) {
       const bbox = sitesBbox(features);
       if (bbox) {
-        map.fitBounds(bbox, FIT_OPTIONS);
         fittedRef.current = true;
+        const fit = () => {
+          map.resize();
+          map.fitBounds(bbox, FIT_OPTIONS);
+        };
+        if (map.loaded()) fit();
+        else map.once("load", fit);
       }
     }
     markersRef.current.forEach((m) => m.remove());

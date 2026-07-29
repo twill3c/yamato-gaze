@@ -119,6 +119,13 @@ body {
 .about-main a { color: var(--ink-secondary); }
 .about-fallback { color: var(--ink-muted); }
 
+.data-error {
+  position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 20;
+  background: #fff3f0; border: 1px solid #d9a79b; color: #7a2e1d;
+  border-radius: 6px; padding: 8px 14px; font-size: 12.5px;
+  max-width: min(560px, calc(100% - 24px));
+}
+
 @media (max-width: 640px) {
   .mirror { width: calc(100% - 24px); }
   .mirror-columns { grid-template-columns: 1fr; }

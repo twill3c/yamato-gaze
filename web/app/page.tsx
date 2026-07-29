@@ -15,18 +15,23 @@ export default function Page() {
   const [passages, setPassages] = useState<Passage[]>([]);
   const [meta, setMeta] = useState<SiteMeta | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [dataError, setDataError] = useState<string | null>(null);
 
   useEffect(() => {
     const e = new URLSearchParams(window.location.search).get("e");
     if (e) setSelectedId(e);
+    // データ読込失敗を黙って空地図にしない(端末依存問題の診断可能性)
+    const fail = (name: string) => (err: unknown) => {
+      setDataError(`${name} の読み込みに失敗しました(${String(err)})。再読み込みをお試しください`);
+    };
     fetch("data/sites.geojson")
-      .then((r) => r.json())
+      .then((r) => (r.ok ? r.json() : Promise.reject(`HTTP ${r.status}`)))
       .then((fc) => setFeatures(fc.features as SiteFeature[]))
-      .catch(() => setFeatures([]));
+      .catch(fail("sites.geojson"));
     fetch("data/passages.json")
-      .then((r) => r.json())
+      .then((r) => (r.ok ? r.json() : Promise.reject(`HTTP ${r.status}`)))
       .then((ps) => setPassages(ps as Passage[]))
-      .catch(() => setPassages([]));
+      .catch(fail("passages.json"));
     fetch("data/meta.json")
       .then((r) => r.json())
       .then(setMeta)
@@ -57,6 +62,11 @@ export default function Page() {
         </div>
       </header>
       <main className="main">
+        {dataError && (
+          <div className="data-error" role="alert">
+            {dataError}
+          </div>
+        )}
         <MapView
           features={features}
           selectedId={selectedId}
