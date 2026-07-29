@@ -6,7 +6,7 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef } from "react";
 
-import { sitesBbox } from "@/lib/bbox";
+import { sitesBbox, type Bbox } from "@/lib/bbox";
 import { spiderfyOffsets } from "@/lib/spiderfy";
 import { AUTHORS_COUNT_COLOR, type SiteFeature } from "@/lib/types";
 
@@ -46,6 +46,23 @@ export default function MapView({
   const mapRef = useRef<maplibregl.Map | null>(null);
   const markersRef = useRef<maplibregl.Marker[]>([]);
   const fittedRef = useRef(false); // 初回のみ fitBounds(以後のユーザ操作を上書きしない)
+  const bboxRef = useRef<Bbox | null>(null);
+
+  // コンテナ 0 サイズ時に fitBounds が no-op する環境(レイアウト確定が遅い
+  // Chrome/Windows 等)があるため、成功が確認できるまで再試行する
+  const tryFit = () => {
+    const map = mapRef.current;
+    const el = containerRef.current;
+    const bbox = bboxRef.current;
+    if (fittedRef.current || !map || !el || !bbox) return;
+    if (el.clientWidth < 50 || el.clientHeight < 50) return; // レイアウト未確定
+    map.resize();
+    if (!map.cameraForBounds(bbox, FIT_OPTIONS)) return; // カメラ計算不能なら次の機会に
+    map.fitBounds(bbox, FIT_OPTIONS);
+    fittedRef.current = true;
+  };
+  const tryFitRef = useRef(tryFit);
+  tryFitRef.current = tryFit;
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
@@ -58,9 +75,13 @@ export default function MapView({
     });
     mapRef.current.addControl(new maplibregl.NavigationControl({ showCompass: false }));
     // コンテナが後からサイズ確定する環境(フレックス計算・dvh 非対応等)での
-    // 0 サイズ初期化対策: サイズ変化のたびに再計測させる
-    const ro = new ResizeObserver(() => mapRef.current?.resize());
+    // 0 サイズ初期化対策: サイズ変化のたびに再計測し、未フィットなら fit を再試行
+    const ro = new ResizeObserver(() => {
+      mapRef.current?.resize();
+      tryFitRef.current();
+    });
     ro.observe(containerRef.current);
+    mapRef.current.once("load", () => tryFitRef.current());
     return () => {
       ro.disconnect();
       mapRef.current?.remove();
@@ -71,20 +92,11 @@ export default function MapView({
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
-    // 初期表示: 全ピンの bbox にフィット(画面幅・解像度に依存しない)。
-    // スタイル読込前・サイズ未確定のタイミングで呼ぶと広域カメラに化けるため、
-    // load 前なら once('load') に遅延し、直前に resize で実寸を再計測する
-    if (!fittedRef.current && features.length > 0) {
-      const bbox = sitesBbox(features);
-      if (bbox) {
-        fittedRef.current = true;
-        const fit = () => {
-          map.resize();
-          map.fitBounds(bbox, FIT_OPTIONS);
-        };
-        if (map.loaded()) fit();
-        else map.once("load", fit);
-      }
+    // 初期表示: 全ピンの bbox にフィット。成功するまで(データ到着・load・
+    // resize の各契機で)再試行し、成功後はユーザ操作を上書きしない
+    if (features.length > 0) {
+      bboxRef.current = sitesBbox(features);
+      tryFitRef.current();
     }
     markersRef.current.forEach((m) => m.remove());
     // 同座標(寺+所蔵仏像)は花弁状のピクセルオフセットで散らす(座標データは不変)
