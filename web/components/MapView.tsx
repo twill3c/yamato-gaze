@@ -6,6 +6,7 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef } from "react";
 
+import { sitesBbox } from "@/lib/bbox";
 import { spiderfyOffsets } from "@/lib/spiderfy";
 import { AUTHORS_COUNT_COLOR, type SiteFeature } from "@/lib/types";
 
@@ -23,9 +24,10 @@ const GSI_PALE_STYLE: maplibregl.StyleSpecification = {
   layers: [{ id: "gsi_pale", type: "raster", source: "gsi_pale" }],
 };
 
-// 初期表示: 大和盆地(config/route.json の map_init と同値)
+// データ到着前のフォールバック(実際の初期表示はピン bbox への fitBounds)
 const INITIAL_CENTER: [number, number] = [135.76, 34.63];
 const INITIAL_ZOOM = 11.5;
+const FIT_OPTIONS = { padding: 60, maxZoom: 13, duration: 0 } as const;
 
 function pinSize(passageCount: number): number {
   return Math.min(30, 10 + Math.sqrt(passageCount) * 3.2);
@@ -43,6 +45,7 @@ export default function MapView({
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
   const markersRef = useRef<maplibregl.Marker[]>([]);
+  const fittedRef = useRef(false); // 初回のみ fitBounds(以後のユーザ操作を上書きしない)
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
@@ -63,6 +66,14 @@ export default function MapView({
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
+    // 初期表示: 全ピンの bbox にフィット(画面幅・解像度に依存しない)
+    if (!fittedRef.current && features.length > 0) {
+      const bbox = sitesBbox(features);
+      if (bbox) {
+        map.fitBounds(bbox, FIT_OPTIONS);
+        fittedRef.current = true;
+      }
+    }
     markersRef.current.forEach((m) => m.remove());
     // 同座標(寺+所蔵仏像)は花弁状のピクセルオフセットで散らす(座標データは不変)
     const offsets = spiderfyOffsets(
