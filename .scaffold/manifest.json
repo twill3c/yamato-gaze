@@ -1,5 +1,5 @@
 {
-  "scaffold_version": "1.0.0",
+  "scaffold_version": "1.1.0",
   "registry_hint": "..\\harness-kit\\scaffold-kit\\registry",
   "components": [
     {
@@ -31,6 +31,37 @@
       "target": "TEST_SPEC.md",
       "source": "templates/TEST_SPEC.md.tmpl",
       "installed_version": "1.0.0"
+    },
+    {
+      "type": "file",
+      "id": "looplog",
+      "target": "harness/looplog.py",
+      "source": "files/harness/looplog.py",
+      "installed_version": "1.1.0",
+      "installed_sha256": "24e0b272dfa7263c76417e3fa377e86f5b3390ae1ff50b84bf7b10ef08ba23e8"
+    },
+    {
+      "type": "file",
+      "id": "wtctl",
+      "target": "harness/wtctl.py",
+      "source": "files/harness/wtctl.py",
+      "installed_version": "1.1.0",
+      "installed_sha256": "d470f672a8ece2fcc711daada83d6bab304a5578c2679ce47c40ecd79b3c31c2"
+    },
+    {
+      "type": "file",
+      "id": "taxonomy",
+      "target": "schema/taxonomy.json",
+      "source": "files/schema/taxonomy.json",
+      "installed_version": "1.1.0",
+      "installed_sha256": "c0adccea48171f37bad672ef6bdbec929de58bb12cfdb0f984826baf67e9fd66"
+    },
+    {
+      "type": "template",
+      "id": "wt_gate",
+      "target": ".wt/gate.json",
+      "source": "templates/gate.json.tmpl",
+      "installed_version": "1.1.0"
     }
   ]
 }
