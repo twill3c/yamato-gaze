@@ -263,10 +263,15 @@ def validate_file(path: Path, taxonomy: dict) -> tuple[list[str], list[str]]:
     # project 検査(LL-14 / HC-008): worktree 実行での cwd 由来汚染を検出する。
     # v1.2 以降のレコードは違反、旧版レコードは追記専用(LL-00a)の既知汚染として
     # ファイル単位に集約した警告に落とす
+    # correction 適用後の有効レコード列(LL-08)。LL-14 の project 検査も有効列で行う —
+    # 汚染レコードを correction で無効化し正しい project で再追記する回復経路を成立させる(HC-009)
+    effective, cerrs = apply_corrections(parsed, path.name)
+    errs.extend(cerrs)
+
     strict_any = False
     projects: set[str] = set()
     legacy_polluted: list[int] = []
-    for lineno, rec in parsed:
+    for lineno, rec in effective:
         proj = rec.get("project")
         if not isinstance(proj, str):
             continue
@@ -292,9 +297,7 @@ def validate_file(path: Path, taxonomy: dict) -> tuple[list[str], list[str]]:
     if ts_list != sorted(ts_list):
         errs.append(f"{path.name}: ts が時系列順でない(LL-00a)")
 
-    # 構造検査(LL-01 / LL-07)は correction 適用後の有効レコード列に対して行う(LL-08)
-    effective, cerrs = apply_corrections(parsed, path.name)
-    errs.extend(cerrs)
+    # 構造検査(LL-01 / LL-07)も同じ有効レコード列に対して行う(LL-08)
     records = [rec for _, rec in effective]
     if not records:
         errs.append(f"{path.name}: 有効レコードがありません(全レコードが訂正で無効化)")
