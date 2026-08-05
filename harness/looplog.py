@@ -23,11 +23,12 @@ import argparse
 import csv
 import datetime as dt
 import json
+import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
 
-SCHEMA_VERSION = "1.1"
+SCHEMA_VERSION = "1.2"
 JST = dt.timezone(dt.timedelta(hours=9))
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -99,8 +100,39 @@ def now_ts() -> str:
 
 
 def detect_project() -> str:
-    """プロジェクト名はリポジトリのディレクトリ名から推定(--project で上書き可)。"""
-    return Path.cwd().name
+    """プロジェクト名は主リポジトリのディレクトリ名から推定(--project で上書き可)。
+
+    cwd 名をそのまま使うと、worktree(`../<repo>.worktrees/<loop_id>/`)での実行時に
+    ループ ID が project として記録され、集計の結合キーが壊れる(HC-008)。
+    worktree-kit の配置規約(WT-01a/b)→ git common dir → cwd 名の順で導出する。
+    """
+    cwd = Path.cwd()
+    for anc in cwd.parents:
+        if anc.name.endswith(".worktrees"):
+            return anc.name[: -len(".worktrees")]
+    try:
+        r = subprocess.run(
+            ["git", "rev-parse", "--git-common-dir"],
+            capture_output=True, text=True, timeout=10,
+        )
+        if r.returncode == 0:
+            common = Path(r.stdout.strip())
+            if not common.is_absolute():
+                common = cwd / common
+            common = common.resolve()
+            if common.name == ".git":
+                return common.parent.name
+    except OSError:
+        pass
+    return cwd.name
+
+
+def _v_tuple(v) -> tuple:
+    """スキーマバージョン文字列を比較可能なタプルへ("1.2" → (1, 2))。"""
+    try:
+        return tuple(int(x) for x in str(v).split("."))
+    except ValueError:
+        return (0,)
 
 
 # ---------------------------------------------------------------- corrections
@@ -202,8 +234,10 @@ def validate_record(rec: dict, taxonomy: dict, lineno: int, fname: str) -> list[
     return errs
 
 
-def validate_file(path: Path, taxonomy: dict) -> list[str]:
+def validate_file(path: Path, taxonomy: dict) -> tuple[list[str], list[str]]:
+    """(違反, 警告) を返す。警告は exit code に影響しない(旧版レコードの既知汚染など)。"""
     errs: list[str] = []
+    warns: list[str] = []
     parsed: list[tuple[int, dict]] = []
     with open(path, encoding="utf-8") as f:
         for lineno, line in enumerate(f, 1):
@@ -219,12 +253,40 @@ def validate_file(path: Path, taxonomy: dict) -> list[str]:
             parsed.append((lineno, rec))
 
     if not parsed:
-        return errs or [f"{path.name}: レコードがありません"]
+        return (errs or [f"{path.name}: レコードがありません"]), warns
 
     expected_loop = path.stem
     for lineno, rec in parsed:
         if rec.get("loop_id") and rec["loop_id"] != expected_loop:
             errs.append(f"{path.name}:{lineno}: loop_id={rec['loop_id']!r} がファイル名と不一致(LL-00b)")
+
+    # project 検査(LL-14 / HC-008): worktree 実行での cwd 由来汚染を検出する。
+    # v1.2 以降のレコードは違反、旧版レコードは追記専用(LL-00a)の既知汚染として
+    # ファイル単位に集約した警告に落とす
+    strict_any = False
+    projects: set[str] = set()
+    legacy_polluted: list[int] = []
+    for lineno, rec in parsed:
+        proj = rec.get("project")
+        if not isinstance(proj, str):
+            continue
+        strict = _v_tuple(rec.get("v", "0")) >= (1, 2)
+        strict_any = strict_any or strict
+        projects.add(proj)
+        if proj == rec.get("loop_id"):
+            if strict:
+                errs.append(f"{path.name}:{lineno}: project={proj!r} が loop_id と一致 — "
+                            f"worktree 実行での cwd 由来汚染の疑い(LL-14 / HC-008)")
+            else:
+                legacy_polluted.append(lineno)
+    if legacy_polluted:
+        warns.append(f"{path.name}: 旧版レコード {len(legacy_polluted)} 件で project が "
+                     f"loop_id と一致(行 {legacy_polluted[0]}–{legacy_polluted[-1]})— "
+                     f"worktree 実行での cwd 由来汚染(LL-14 / HC-008)")
+    if len(projects) > 1:
+        msg = (f"{path.name}: project が混在 {sorted(projects)} — "
+               f"1 ループ 1 プロジェクトであること(LL-14)")
+        (errs if strict_any else warns).append(msg)
 
     ts_list = [rec.get("ts", "") for _, rec in parsed]
     if ts_list != sorted(ts_list):
@@ -236,7 +298,7 @@ def validate_file(path: Path, taxonomy: dict) -> list[str]:
     records = [rec for _, rec in effective]
     if not records:
         errs.append(f"{path.name}: 有効レコードがありません(全レコードが訂正で無効化)")
-        return errs
+        return errs, warns
 
     if records[0].get("event") != "loop_start":
         errs.append(f"{path.name}: 先頭イベントが loop_start でない(LL-01)")
@@ -253,7 +315,7 @@ def validate_file(path: Path, taxonomy: dict) -> list[str]:
             errs.append(
                 f"{path.name}: loop_end.failure_count={declared} だが failure レコードは {actual} 件(LL-07)"
             )
-    return errs
+    return errs, warns
 
 
 def iter_log_files(log_dir: Path):
@@ -267,10 +329,17 @@ def cmd_validate(args) -> int:
         print(f"ログディレクトリがありません: {log_dir}(記録がなければ合格扱い)")
         return 0
     all_errs: list[str] = []
+    all_warns: list[str] = []
     n = 0
     for path in iter_log_files(log_dir):
         n += 1
-        all_errs.extend(validate_file(path, taxonomy))
+        errs, warns = validate_file(path, taxonomy)
+        all_errs.extend(errs)
+        all_warns.extend(warns)
+    if all_warns:
+        print(f"⚠ {len(all_warns)} 件の警告(旧版レコードの既知の問題 — exit code に影響しない):")
+        for w in all_warns:
+            print(f"  - {w}")
     if all_errs:
         print(f"NG — {n} ファイル中 {len(all_errs)} 件の違反:")
         for e in all_errs:
@@ -329,6 +398,19 @@ def cmd_append(args) -> int:
     path = Path(args.log_dir) / f"{args.loop}.jsonl"
     existing = read_parsed(path) if path.exists() else []
     effective, _ = apply_corrections(existing, path.name)
+
+    # project 一貫性ガード(LL-14 / HC-008): 同一ループへ異なる project で追記しない。
+    # correction は旧汚染ループの回復経路のため対象外
+    if args.event != "correction" and effective:
+        existing_proj = effective[0][1].get("project")
+        if isinstance(existing_proj, str) and rec["project"] != existing_proj:
+            print(
+                f"記録拒否 — project={rec['project']!r} は既存レコードの {existing_proj!r} と"
+                f"不一致です(LL-14 / HC-008)。worktree と main checkout で実行場所が"
+                f"変わっていないか確認し、必要なら --project で明示してください"
+            )
+            return 1
+
     if args.event == "correction":
         target = rec["data"]["supersedes"]
         if target not in {ln for ln, _ in effective}:
@@ -523,7 +605,7 @@ def main(argv=None) -> int:
     ap = sub.add_parser("append", help="イベントを 1 件記録する")
     ap.add_argument("--loop", required=True)
     ap.add_argument("--event", required=True, choices=sorted(EVENT_SPECS))
-    ap.add_argument("--project", help="省略時はカレントディレクトリ名")
+    ap.add_argument("--project", help="省略時は主リポジトリ名を自動検出(worktree 実行にも対応 — HC-008)")
     ap.add_argument("--ts", help="省略時は現在時刻(JST)")
     ap.add_argument("--data", nargs="*", metavar="key=value")
     ap.set_defaults(func=cmd_append)
