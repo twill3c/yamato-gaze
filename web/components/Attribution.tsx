@@ -40,11 +40,11 @@ export default function Attribution({
         <a href={`${dataPrefix}/meta.json`} download>
           meta.json
         </a>
-        {" ｜ コード: MIT("}
+        {" ｜ コード: MIT License © 2026 坂田哲朗 ・ "}
         <a href={GITHUB_URL} target="_blank" rel="noreferrer">
           GitHub
         </a>
-        {")｜ "}
+        {" ｜ "}
         <a href={`${basePrefix}about/`}>ライセンス詳細</a>
       </div>
       {meta && (
