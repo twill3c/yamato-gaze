@@ -51,6 +51,22 @@ export default function Attribution({
         {" ｜ "}
         <a href={`${basePrefix}about/`}>ライセンス詳細</a>
         {" ・ "}
+        <a
+          href="https://claude.ai/code/artifact/1159c1df-af03-4361-9628-b897bcf6b5e8"
+          target="_blank"
+          rel="noreferrer"
+        >
+          大和路の三面鏡の読み方
+        </a>
+        {" ・ "}
+        <a
+          href="https://claude.ai/code/artifact/80fded79-8147-46ef-a04b-58f38a7026fa"
+          target="_blank"
+          rel="noreferrer"
+        >
+          大和路の視線設計図
+        </a>
+        {" ・ "}
         <a href="https://app-menu-amber.vercel.app" target="_blank" rel="noopener">
           App Menu
         </a>
