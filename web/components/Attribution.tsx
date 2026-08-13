@@ -50,6 +50,10 @@ export default function Attribution({
         </a>
         {" ｜ "}
         <a href={`${basePrefix}about/`}>ライセンス詳細</a>
+        {" ・ "}
+        <a href="https://app-menu-amber.vercel.app" target="_blank" rel="noopener">
+          App Menu
+        </a>
       </div>
       {meta && (
         <div className="repro">
